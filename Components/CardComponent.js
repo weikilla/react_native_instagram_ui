@@ -19,11 +19,10 @@
  */
 
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View, Image} from 'react-native';
-import Feather from 'react-native-vector-icons/Feather'
+import {Image, Text} from 'react-native';
 import AntDesign from 'react-native-vector-icons/AntDesign'
-import {createTabNavigator, createAppContainer} from 'react-navigation'
-import {Icon, Card, CardItem, Thumbnail, Body, Left, Right, Button} from "native-base";
+import {Body, Button, Card, CardItem, Icon, Left, Thumbnail} from "native-base";
+import globalStyle from '../assets/globalStyle'
 
 export default class CardComponent extends Component<Props> {
 
@@ -45,10 +44,10 @@ export default class CardComponent extends Component<Props> {
             <Card>
                 <CardItem>
                     <Left>
-                        <Thumbnail source={require('../assets/me.png')}/>
+                        <Thumbnail source={require('../assets/avatar/me.png')}/>
                         <Body>
-                        <Text>WeiKilla</Text>
-                        <Text note>Jan 15, 2018</Text>
+                        <Text style={[globalStyle.blackText,globalStyle.blodText]}>WeiKilla</Text>
+                        <Text note> Jan 15, 2018</Text>
                         </Body>
                     </Left>
                 </CardItem>
@@ -85,10 +84,3 @@ export default class CardComponent extends Component<Props> {
     }
 }
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-});
